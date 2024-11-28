@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Summary Website</title>
+    <link rel="icon" href="./images/icons8-book-96.png" type="image/png">
+    
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        color: rgba(204, 185, 185, 0.906);
+        font-family: monospace;
+      }
+      header {
+        background-color: rgba(3, 22, 26, 0.911);
+        height: 60vh;
+        width: 100vw;
+      }
+
+      .navigation {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        /* background-color: rgba(20, 32, 32, 0.952); */
+      }
+      .navigation h1 {
+        margin-left: 10px;
+      }
+      #links {
+        margin-left: 60vw;
+      }
+      a {
+        margin-right: 4vw;
+        text-decoration: none;
+      }
+      a:hover {
+        color: black;
+        font-size: larger;
+      }
+      .text {
+        width: 22vw;
+        margin-left: 10vw;
+      }
+      .container {
+        margin-top: 10vh;
+        display: flex;
+        justify-content: space-between;
+        color: rgba(0, 0, 0, 0.888);
+        align-items: center;
+      }
+      #head {
+        width: 60vw;
+        margin-bottom: 1vh;
+      }
+      .book {
+        /* width: 30vw;
+        height: 10vh; */
+        /* margin-left: 10vw; */
+        margin-right: 10vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #lessthan {
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      #greaterthan {
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+        
+        height: 30vh;
+        width: 30vw;
+        margin: 30px;
+        background-color: white;
+        border-radius: 25px;
+      }
+      .right {
+        border: 2px solid black;
+        border-radius: 25px;
+        height: 30vh;
+        width: 50vw;
+        margin: 30px;
+        background-color: white;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+      }
+.right::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar in WebKit browsers */
+}
+      
+      .main {
+        display: flex;
+        border: 3px solid rgb(20, 17, 17);
+        padding: 25px;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: rgb(4 45 54 / 91%);
+        color: black;
+      }
+      .in{
+        border: 2px solid black;
+        height: 10vh;
+        width: 25vw;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      .in input:focus {
+    border: none; /* Removes the border when the input is focused */
+    outline: none; /* Removes the outline that appears on focus */
+}
+      .in input{
+        
+        border: none;
+        font-size: large;
+        color: black;
+    
+    padding: 10px; /* Adjusts the space inside the input */
+    height: 40px;  /* Sets the height of the input */
+    width: 200px;  /* Sets the width of the input */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+        
+      }
+      .left button{
+        background-color: rgb(106, 243, 177);
+        color: white;
+        text-align: center;
+        height: 5vh;
+        width: 10vw;
+        border-radius: 15px;
+        cursor: pointer;
+        
+      }
+      .right h1{
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        /* position: fixed; */
+        
+      }
+      .content{
+        
+        padding: 10px;
+        box-sizing: border-box;
+        color: black;
+        
+      }
+      .heading{
+        height: 40px;
+        width: 50vw;
+        color: black;
+        position: sticky;
+    top: 0;
+    background-color: white;
+      }
+      /* #i1{
+        border: none;
+        outline: none;
+      } */
+       .fotter{
+        display: flex;
+        justify-content: center;
+        background-color: rgba(3, 22, 26, 0.911);
+        height: 30vh;
+       }
+       .f-left , .f-right{
+        width: 50vw;
+        height: 30vh;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 10px;
+        align-items: center;
+       }
+       .f-right p{
+        width: 20vw;
+        margin-left:80px ;
+        margin-top: 10px;
+       }
+       .f-left{
+        justify-content: baseline;
+        align-content: space-between;
+        flex-wrap: wrap;
+        align-items: center
+       }
+       .f-left i{
+        margin-left: 0px;
+        margin-bottom: 10px;
+       }
+       .ft{
+        position: relative;
+        top:-30px;
+        left: 50px;
+       }
+       #ft2{
+        left: 110px;
+       }
+       .f-left h4,h5{
+        margin-left: 70px;
+       }
+       .bookPhoto{
+        display: none;
+        height:20vh;
+        width: 10vw;
+        object-fit: contain;
+        
+       }
+       .bookImage{
+       
+        height:20vh;
+        width: 10vw;
+        
+        margin-right: 10px;
+        position:absolute;
+        right: 7%;
+        
+       }
+       .bookcontainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* position: relative; */
+       }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navigation">
+        <h1>BookInfo.io</h1>
+        <div id="links">
+          <a href="" class="anchor">Home</a>
+          <a href="" class="anchor">History</a>
+          <a href="" class="anchor">Downloade</a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="text">
+          <h1 id="head">Welcome to BookSummarize!</h1>
+
+          <p>
+            we save your time by providing the acuurate summary of the books so
+            that you wont need to read all the book instead you read the summary
+            provided by the website and get the essential learnings . we try our
+            best to provide you as best as we can
+          </p>
+          <h2>Happy reading!</h2>
+        </div>
+        <div class="book">
+          <i class="fa-solid fa-less-than" id="lessthan"></i>
+
+          <img
+            src="./images/2book.jpg"
+            alt="books"
+            height="200px"
+            width="500px"
+          />
+
+          <i class="fa-solid fa-greater-than" id="greaterthan"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="main" >
+      <div class="left">
+        <div class="in">
+          <span style="color: black;">* Title:</span><br>
+          <input type="text" width="30vw" style="color: black;" id="title" />
+        </div>
+
+        <div class="in">
+          <span style="color: black;">Author:</span><br>
+          <input type="text" width="30vw" id="i1" />
+        </div>
+        <button type="submit" id="btn">GENERATE</button>
+      </div>
+      <div class="right">
+        <div class="heading">
+        <h1 class="bookName" style="color: black;">Book summary</h1>
+        <hr>
+      </div>
+      <div class="bookcontainer">
+        
+          
+        
+        <div >
+        <p class="bookDes" style="color: black; padding-left: 10px;width: 35vw;">your summary will be visibel here</p>
+          </div> 
+        <div class="bookImage">
+          <img src="" alt="book photo is not availabel" class="bookPhoto">
+        </div>
+      </div>
+      </div>
+    </div>
+    
+    
+    <div class="fotter">
+      <div class="f-left">
+      <i class="fa-solid fa-location-dot"></i><span class="ft">hyderabad</span>
+      <i class="fa-solid fa-envelope"></i><span class="ft" id="ft2">arhanmohammed001@gmail.com</span>
+      <h4>@copyright</h4>
+      <h5 class="date"></h5>
+    </div>
+    <div class="f-right">
+      <h2>About the website</h2>
+      <p>
+        this website is created to solve the problem of reading a book for a week and learning the essientials
+        i dont say reading a book is waste if time but in this AI era we can grap the learnings of that 
+        book very easily .
+      </p>
+    </div>
+    <script src="book.js"></script>
+    <!-- <script src="node.js"></script> -->
+  </body>
+</html>
